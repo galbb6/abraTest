@@ -1,0 +1,77 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+</head>
+<body class="container">
+  <div class="row header">
+    <h1 class="col-12">welcome</h1>
+    <h3 class="col-12">here you can add a new pet</h3>
+  </div>
+
+  <form class="row col-12">
+    <ul>
+      <li>
+        <input
+          #name
+          id="name"
+          name="name"
+          type="text"
+          placeholder="name"
+          maxlength="25"
+        />
+      </li>
+      <li>
+        <input
+          #age
+          id="age"
+          name="age"
+          type="number"
+          placeholder="age"
+          min="1"
+        />
+      </li>
+      <li>
+        <select id="type" (change)="onSelect($event)" formControlName="petType">
+          <option value=" ">Choose pet</option>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Horse">Horse</option>
+          <option value="Other">Other</option>
+        </select>
+      </li>
+      <li>
+        <input
+          (change)="onChange()"
+          type="radio"
+          id="black"
+          name="options"
+          value="black"
+        />
+        <label for="option1">Black</label>
+      
+        <input
+          (change)="onChange()"
+          type="radio"
+          id="white"
+          name="options"
+          value="white"
+        />
+        <label for="option2">White</label>
+      </li>
+      
+    </ul>
+    <div class="col-12" [ngStyle]="{ textAlign: 'center' }">
+      <button
+        type="button"
+        (click)="handleNewPet()"
+        class="btn btn-dark btn-m-al"
+      >
+        submin
+      </button>
+    </div>
+  </form>
+</body>
